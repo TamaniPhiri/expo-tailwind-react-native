@@ -114,17 +114,17 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <SafeAreaView className="bg-[#101010] relative flex-1 justify-around py-4 px-4">
+    <SafeAreaView className="bg-[#101010] relative flex-1 justify-between py-8 px-4">
       <AnimatePresence>
         {errorMsg ? (
           <MotiView
             from={{ opacity: 0, translateY: -40 }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.1 }}
-            className="absolute z-50 top-20 w-full items-center text-black"
+            className="absolute z-50 top-28 w-full items-center text-black"
           >
             <View className="flex capitalize w-full items-center rounded py-4 justify-center">
-              <Text className="max-w-mg rounded-md text-red-500 font-bold shadow bg-[#202020] backdrop-blur-sm p-4">
+              <Text className="max-w-md rounded-md capitalize text-red-500 font-bold shadow bg-[#202020] backdrop-blur-sm p-4">
                 {errorMsg}!
               </Text>
             </View>
@@ -150,7 +150,7 @@ const Home = ({ navigation }) => {
           <ActivityIndicator size={100} color="white" />
         </View>
       ) : (
-        <View>
+        <View className="mb-10">
           {/* More Details */}
           <MotiView
             from={{ opacity: 0, translateY: -40 }}
