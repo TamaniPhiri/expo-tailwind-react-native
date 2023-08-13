@@ -79,25 +79,25 @@ const Home = ({ navigation }) => {
 
   switch (data.weather[0].main) {
     case "Clouds":
-      icon = <Feather name="cloud" color="white" size={74} />;
+      icon = <Feather name="cloud" color="white" size={90} />;
       break;
     case "Haze":
-      icon = <Fontisto name="day-haze" color="white" size={74} />;
+      icon = <Fontisto name="day-haze" color="white" size={90} />;
       break;
     case "Rain":
-      icon = <Feather name="cloud-rain" color="white" size={74} />;
+      icon = <Feather name="cloud-rain" color="white" size={90} />;
       break;
     case "Clear":
-      icon = <Feather name="sun" color="white" size={74} />;
+      icon = <Feather name="sun" color="white" size={90} />;
       break;
     case "Drizzle":
-      icon = <Feather name="cloud-drizzle" color="white" size={74} />;
+      icon = <Feather name="cloud-drizzle" color="white" size={90} />;
       break;
     case "Snow":
-      icon = <Fontisto name="snowflake-2" color="white" size={74} />;
+      icon = <Fontisto name="snowflake-2" color="white" size={90} />;
       break;
     case "Thunderstorm":
-      icon = <Feather name="cloud-lightning" color="white" size={74} />;
+      icon = <Feather name="cloud-lightning" color="white" size={90} />;
       break;
   }
 
@@ -131,15 +131,15 @@ const Home = ({ navigation }) => {
           type: "timing",
           duration: 800,
         }}
-        className="flex w-full bg-[#202020] rounded-xl p-4 flex-row justify-evenly items-center"
+        className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-evenly items-center"
       >
         <View className="flex items-center">
           <Fontisto name="wind" color="white" size={32}/>
-          <Text>{data.wind.speed} m/s</Text>
+          <Text className="text-gray-400 mt-2">{data.wind.speed} m/s</Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="water" color="white" size={32}/>
-          <Text>{data.wind.speed} m/s</Text>
+          <Text className="text-gray-400 mt-2">{data.main.humidity} %</Text>
         </View>
       </MotiView>
     </SafeAreaView>
