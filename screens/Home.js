@@ -114,7 +114,7 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <SafeAreaView className="bg-[#101010] relative flex-1 justify-between py-8 px-4">
+    <SafeAreaView className="bg-[#101010] relative flex-1 justify-around py-8 px-4">
       <AnimatePresence>
         {errorMsg ? (
           <MotiView
@@ -132,7 +132,11 @@ const Home = ({ navigation }) => {
         ) : null}
       </AnimatePresence>
       {/*Search */}
-      <MotiView className="flex bg-[#202020] rounded-full p-1 items-center justify-between flex-row">
+      <MotiView
+        from={{ opacity: 0, translateX: -40 }}
+        animate={{ opacity: 1, translateX: 0 }}
+        className="flex bg-[#202020] rounded-full p-1 items-center justify-between flex-row"
+      >
         <TextInput
           onChangeText={(text) => handleInput(text)}
           className="flex flex-1 text-white pl-2"
@@ -146,7 +150,7 @@ const Home = ({ navigation }) => {
       </MotiView>
 
       {loading ? (
-        <View className="flex w-full items-center justify-center">
+        <View className="flex w-full flex-1 items-center justify-center">
           <ActivityIndicator size={100} color="white" />
         </View>
       ) : (
