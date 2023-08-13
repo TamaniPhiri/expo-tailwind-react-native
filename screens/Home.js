@@ -122,6 +122,16 @@ const Home = ({ navigation }) => {
         </View>
         <View>{icon}</View>
       </View>
+      <View>
+        <View>
+            <View>
+                <Fontisto name="wind"/>
+            </View>
+            <Text>
+            {data.wind.speed} m/s
+            </Text>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
