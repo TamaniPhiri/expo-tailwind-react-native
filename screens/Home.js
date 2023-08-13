@@ -124,12 +124,10 @@ const Home = ({ navigation }) => {
       </View>
       <View>
         <View>
-            <View>
-                <Fontisto name="wind"/>
-            </View>
-            <Text>
-            {data.wind.speed} m/s
-            </Text>
+          <View>
+            <Fontisto name="wind" />
+          </View>
+          <Text>{data.wind.speed} m/s</Text>
         </View>
       </View>
     </SafeAreaView>
