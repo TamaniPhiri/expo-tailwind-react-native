@@ -116,7 +116,7 @@ const Home = ({ navigation }) => {
       >
         <View>
           <Text className="font-bold text-white text-xl">{data.name}</Text>
-          <Text className="text-gray-500 font-light text-xs pt-1">
+          <Text className="text-gray-400 font-light text-xs pt-1">
             {date.getUTCDate()}/{date.getUTCMonth() + 1}/{date.getUTCFullYear()}
           </Text>
         </View>
@@ -127,6 +127,8 @@ const Home = ({ navigation }) => {
           <Feather name="grid" color="#fff" size={24} />
         </TouchableOpacity>
       </MotiView>
+
+      {/* Temperature and Icon */}
       <MotiView
         from={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -138,7 +140,7 @@ const Home = ({ navigation }) => {
       >
         <View className="my-6">
           <Text
-            className={`text-6xl ${
+            className={`text-6xl text-center ${
               data.main.temp <= 20
                 ? "text-blue-300"
                 : data.main.temp >= 35
@@ -152,10 +154,12 @@ const Home = ({ navigation }) => {
           >
             {parseInt(data.main.temp)}°
           </Text>
-          <Text className="text-white">{data.weather[0].description}</Text>
+          <Text className="text-white text-center capitalize">{data.weather[0].description}</Text>
         </View>
         <View>{icon}</View>
       </MotiView>
+
+      {/* Details */}
       <MotiView
         from={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
