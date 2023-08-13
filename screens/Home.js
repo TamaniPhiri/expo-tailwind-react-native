@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
+import Fontisto from 'react-native-vector-icons/Fontisto'
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -76,25 +77,25 @@ const Home = ({ navigation }) => {
 
   switch (data.weather[0].main) {
     case "Clouds":
-      icon = "cloud";
+      icon = <Feather name="cloud" color="white" size={74} />;
       break;
     case "Haze":
-      icon = "user";
+      icon = <Fontisto name="day-haze" color="white" size={74} />;
       break;
     case "Rain":
-      icon = "user";
+      icon = <Feather name="cloud-rain" color="white" size={74} />;
       break;
     case "Clear":
-      icon = "sun";
+      icon = <Feather name="sun" color="white" size={74} />;
       break;
     case "Drizzle":
-      icon = "cloud-drizzle";
+      icon = <Feather name="cloud-drizzle" color="white" size={74} />;
       break;
     case "Snow":
-      icon = "user";
+      icon = <Fontisto name="snowflake-2" color="white" size={74} />;
       break;
     case "Thunderstorm":
-      icon = "user";
+      icon = <Feather name="cloud-lightning" color="white" size={74} />;
       break;
   }
 
@@ -120,7 +121,7 @@ const Home = ({ navigation }) => {
           <Text className="text-white">{data.weather[0].description}</Text>
         </View>
         <View>
-          <Feather name={icon} color="white" size={74} />
+          {icon}
         </View>
       </View>
     </SafeAreaView>
