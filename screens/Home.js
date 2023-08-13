@@ -136,19 +136,7 @@ const Home = ({ navigation }) => {
         className="flex flex-row justify-around w-full items-center"
       >
         <View className="my-6">
-          <Text
-            className={`text-6xl bg-clip-text bg-gradient-to-tr ${
-              data.main.temp <= 20
-                ? "from-white to-blue-300 text-transparent"
-                : data.main.temp >= 35
-                ? "from-white to-orange-500 text-transparent"
-                : data.main.temp <= 10
-                ? "from-white to-blue-500 text-transparent"
-                : data.main.temp >= 30
-                ? "from-white to-orange-300 text-transparent"
-                : "text-white"
-            } leading-none font-light`}
-          >
+          <Text className="text-6xl text-white">
             {parseInt(data.main.temp)}°
           </Text>
           <Text className="text-white">{data.weather[0].description}</Text>
@@ -189,7 +177,9 @@ const Home = ({ navigation }) => {
           <Text className="text-xs text-gray-600 mt-2">Feels like</Text>
         </View>
       </MotiView>
-      <MotiView></MotiView>
+      <MotiView>
+        
+      </MotiView>
     </SafeAreaView>
   );
 };
