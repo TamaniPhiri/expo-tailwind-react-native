@@ -76,7 +76,7 @@ const Home = ({ navigation }) => {
   if (!data) {
     return (
       <View className="flex min-h-screen w-full bg-[#101010] items-center justify-center">
-        <MotiView from={{opacity:0}} animate={{opacity:1}}>
+        <MotiView from={{opacity:0}} animate={{opacity:1}} transition={{loop:true,duration:500}}>
             <Text className="text-white my-4 text-center">Loading...</Text>
         </MotiView>
         <ActivityIndicator color="white" size={100} />
