@@ -136,7 +136,19 @@ const Home = ({ navigation }) => {
         className="flex flex-row justify-around w-full items-center"
       >
         <View className="my-6">
-          <Text className="text-6xl text-white">
+          <Text
+            className={`text-6xl ${
+              data.main.temp <= 20
+                ? "text-blue-300"
+                : data.main.temp >= 35
+                ? "text-orange-400"
+                : data.main.temp <= 10
+                ? "text-blue-400"
+                : data.main.temp >= 30
+                ? "text-orange-200"
+                : "text-white"
+            }`}
+          >
             {parseInt(data.main.temp)}°
           </Text>
           <Text className="text-white">{data.weather[0].description}</Text>
@@ -177,9 +189,7 @@ const Home = ({ navigation }) => {
           <Text className="text-xs text-gray-600 mt-2">Feels like</Text>
         </View>
       </MotiView>
-      <MotiView>
-        
-      </MotiView>
+      <MotiView></MotiView>
     </SafeAreaView>
   );
 };
