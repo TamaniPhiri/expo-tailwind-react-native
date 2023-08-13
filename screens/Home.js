@@ -76,8 +76,12 @@ const Home = ({ navigation }) => {
   if (!data) {
     return (
       <View className="flex min-h-screen w-full bg-[#101010] items-center justify-center">
-        <MotiView from={{opacity:0}} animate={{opacity:1}} transition={{loop:true,duration:500}}>
-            <Text className="text-white my-4 text-center">Loading...</Text>
+        <MotiView
+          from={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ loop: true, duration: 500 }}
+        >
+          <Text className="text-white my-4 text-center">Loading...</Text>
         </MotiView>
         <ActivityIndicator color="white" size={100} />
       </View>
@@ -115,8 +119,14 @@ const Home = ({ navigation }) => {
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
       {/*Search */}
       <MotiView className="flex bg-[#202020] rounded-full p-2 items-center justify-between flex-row">
-        <TextInput onChangeText={(e)=>handleInput(e)} className="flex flex-1 text-white pl-2" />
-        <TouchableOpacity onPress={(e)=>handleSubmit(e)} className="px-2 flex items-center justify-center">
+        <TextInput
+          onChangeText={(e) => handleInput(e)}
+          className="flex flex-1 text-white pl-2"
+        />
+        <TouchableOpacity
+          onPress={(e) => handleSubmit(e)}
+          className="px-2 flex items-center justify-center"
+        >
           <Ionicons name="search" color="white" size={28} />
         </TouchableOpacity>
       </MotiView>
