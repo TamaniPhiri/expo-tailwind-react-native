@@ -133,7 +133,7 @@ const Home = ({ navigation }) => {
           type: "timing",
           duration: 400,
         }}
-        className="flex flex-row justify-between w-full items-center"
+        className="flex flex-row justify-around w-full items-center"
       >
         <View className="my-6">
           <Text className="text-6xl text-white">
@@ -150,7 +150,7 @@ const Home = ({ navigation }) => {
           type: "timing",
           duration: 800,
         }}
-        className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-evenly items-center"
+        className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-around items-center"
       >
         <View className="flex items-center">
           <Fontisto name="wind" color="white" size={24} />
@@ -176,6 +176,9 @@ const Home = ({ navigation }) => {
           </Text>
           <Text className="text-xs text-gray-600 mt-2">Feels like</Text>
         </View>
+      </MotiView>
+      <MotiView>
+
       </MotiView>
     </SafeAreaView>
   );
