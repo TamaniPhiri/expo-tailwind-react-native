@@ -114,7 +114,7 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
+    <SafeAreaView className="bg-[#101010] flex-1 justify-around py-4 px-4">
       {/*Search */}
       <MotiView className="flex bg-[#202020] rounded-full p-2 items-center justify-between flex-row">
         <TextInput
@@ -129,113 +129,119 @@ const Home = ({ navigation }) => {
         </TouchableOpacity>
       </MotiView>
 
-      <View>
-        {/* Temperature and Icon */}
-        <MotiView
-          from={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            type: "timing",
-            duration: 400,
-          }}
-          className="flex flex-row justify-around w-full items-center"
-        >
-          <View className="my-6">
-            <Text
-              className={`text-6xl text-center ${
-                data.main.temp <= 20
-                  ? "text-blue-300"
-                  : data.main.temp >= 35
-                  ? "text-orange-400"
-                  : data.main.temp <= 10
-                  ? "text-blue-400"
-                  : data.main.temp >= 30
-                  ? "text-orange-200"
-                  : "text-white"
-              }`}
-            >
-              {parseInt(data.main.temp)}°
-            </Text>
-            <Text className="text-white text-center capitalize">
-              {data.weather[0].description}
-            </Text>
-          </View>
-          <View>{icon}</View>
-        </MotiView>
-
-        {/* Details */}
-        <MotiView
-          from={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            type: "timing",
-            duration: 800,
-          }}
-          className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-around items-center"
-        >
-          <View className="flex items-center">
-            <Fontisto name="wind" color="white" size={24} />
-            <Text className="text-gray-400 mt-2 text-center">
-              {data.wind.speed} m/s
-            </Text>
-            <Text className="text-xs text-gray-600 mt-2 text-center">Wind</Text>
-          </View>
-          <View className="flex items-center">
-            <Ionicons name="water" color="white" size={24} />
-            <Text className="text-gray-400 mt-2 text-center">
-              {data.main.humidity} %
-            </Text>
-            <Text className="text-xs text-gray-600 mt-2 text-center">
-              Humidity
-            </Text>
-          </View>
-          <View className="flex items-center">
-            <Fontisto name="eye" color="white" size={24} />
-            <Text className="text-gray-400 mt-2 text-center">
-              {data.visibility / 1000} km
-            </Text>
-            <Text className="text-xs text-gray-600 mt-2 text-center">
-              Visibility
-            </Text>
-          </View>
-          <View className="flex items-center">
-            <Ionicons name="thermometer-outline" color="white" size={24} />
-            <Text className="text-gray-400 mt-2 text-center">
-              {parseInt(data.main.feels_like)}°
-            </Text>
-            <Text className="text-xs text-gray-600 mt-2 text-center">
-              Feels like
-            </Text>
-          </View>
-        </MotiView>
-
-        {/* More Details */}
-        <MotiView
-          from={{ opacity: 0, translateY: 20 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{
-            type: "timing",
-            duration: 1000,
-          }}
-          className="flex flex-row justify-between my-5 items-center"
-        >
-          <View>
-            <Text className="font-bold text-white text-xl">
-              {data.name}, {data.sys.country}
-            </Text>
-            <Text className="text-gray-400 font-light text-xs pt-1">
-              {date.getUTCDate()}/{date.getUTCMonth() + 1}/
-              {date.getUTCFullYear()}
-            </Text>
-          </View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Details")}
-            className="p-2 bg-[#202020] rounded-md flex items-center justify-center"
-          >
-            <Feather name="grid" color="#fff" size={24} />
-          </TouchableOpacity>
-        </MotiView>
-      </View>
+     {loading?(
+        <View className="flex w-full items-center justify-center">
+            <ActivityIndicator size={100} color="white"/>
+        </View>
+     ):(
+         <View>
+         {/* Temperature and Icon */}
+         <MotiView
+           from={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{
+             type: "timing",
+             duration: 400,
+           }}
+           className="flex flex-row justify-around w-full items-center"
+         >
+           <View className="my-6">
+             <Text
+               className={`text-6xl text-center ${
+                 data.main.temp <= 20
+                   ? "text-blue-300"
+                   : data.main.temp >= 35
+                   ? "text-orange-400"
+                   : data.main.temp <= 10
+                   ? "text-blue-400"
+                   : data.main.temp >= 30
+                   ? "text-orange-200"
+                   : "text-white"
+               }`}
+             >
+               {parseInt(data.main.temp)}°
+             </Text>
+             <Text className="text-white text-center capitalize">
+               {data.weather[0].description}
+             </Text>
+           </View>
+           <View>{icon}</View>
+         </MotiView>
+ 
+         {/* Details */}
+         <MotiView
+           from={{ opacity: 0, scale: 0 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{
+             type: "timing",
+             duration: 800,
+           }}
+           className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-around items-center"
+         >
+           <View className="flex items-center">
+             <Fontisto name="wind" color="white" size={24} />
+             <Text className="text-gray-400 mt-2 text-center">
+               {data.wind.speed} m/s
+             </Text>
+             <Text className="text-xs text-gray-600 mt-2 text-center">Wind</Text>
+           </View>
+           <View className="flex items-center">
+             <Ionicons name="water" color="white" size={24} />
+             <Text className="text-gray-400 mt-2 text-center">
+               {data.main.humidity} %
+             </Text>
+             <Text className="text-xs text-gray-600 mt-2 text-center">
+               Humidity
+             </Text>
+           </View>
+           <View className="flex items-center">
+             <Fontisto name="eye" color="white" size={24} />
+             <Text className="text-gray-400 mt-2 text-center">
+               {data.visibility / 1000} km
+             </Text>
+             <Text className="text-xs text-gray-600 mt-2 text-center">
+               Visibility
+             </Text>
+           </View>
+           <View className="flex items-center">
+             <Ionicons name="thermometer-outline" color="white" size={24} />
+             <Text className="text-gray-400 mt-2 text-center">
+               {parseInt(data.main.feels_like)}°
+             </Text>
+             <Text className="text-xs text-gray-600 mt-2 text-center">
+               Feels like
+             </Text>
+           </View>
+         </MotiView>
+ 
+         {/* More Details */}
+         <MotiView
+           from={{ opacity: 0, translateY: 20 }}
+           animate={{ opacity: 1, translateY: 0 }}
+           transition={{
+             type: "timing",
+             duration: 1000,
+           }}
+           className="flex flex-row justify-between my-5 items-center"
+         >
+           <View>
+             <Text className="font-bold text-white text-xl">
+               {data.name}, {data.sys.country}
+             </Text>
+             <Text className="text-gray-400 font-light text-xs pt-1">
+               {date.getUTCDate()}/{date.getUTCMonth() + 1}/
+               {date.getUTCFullYear()}
+             </Text>
+           </View>
+           <TouchableOpacity
+             onPress={() => navigation.navigate("Details")}
+             className="p-2 bg-[#202020] rounded-md flex items-center justify-center"
+           >
+             <Feather name="share" color="#fff" size={24} />
+           </TouchableOpacity>
+         </MotiView>
+       </View>
+     )}
     </SafeAreaView>
   );
 };
