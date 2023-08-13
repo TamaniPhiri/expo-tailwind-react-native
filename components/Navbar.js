@@ -1,7 +1,7 @@
 import { MotiView, AnimatePresence } from "moti";
 import { useReducer } from "react";
 import { View, SafeAreaView, Text, TouchableOpacity } from "react-native";
-import Feather from 'react-native-vector-icons/Feather'
+import Feather from 'react-native-vector-icons/EvilIcons'
 
 const Navbar = () => {
   const [open, setOpen] = useReducer((s) => !s, true);
