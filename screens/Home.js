@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
-import Fontisto from 'react-native-vector-icons/Fontisto'
+import Fontisto from "react-native-vector-icons/Fontisto";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -120,9 +120,7 @@ const Home = ({ navigation }) => {
           </Text>
           <Text className="text-white">{data.weather[0].description}</Text>
         </View>
-        <View>
-          {icon}
-        </View>
+        <View>{icon}</View>
       </View>
     </SafeAreaView>
   );
