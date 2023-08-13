@@ -8,7 +8,7 @@ const Home = ({ navigation }) => {
       <View className="flex flex-row justify-between items-center">
         <View>
           <Text className="font-bold text-white text-xl">Zambia</Text>
-          <Text className="text-gray-500 font-light text-xs">12 May, Sat</Text>
+          <Text className="text-gray-500 font-light text-xs pt-1">12 May, Sat</Text>
         </View>
         <TouchableOpacity className="p-2s bg-[#202020] rounded-md flex items-center justify-center">
           <Feather name="grid" color="#fff" size={24} />
