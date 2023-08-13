@@ -1,14 +1,15 @@
 import { MotiView, AnimatePresence } from "moti";
 import { useReducer } from "react";
 import { View, SafeAreaView, Text, TouchableOpacity } from "react-native";
+import Feather from 'react-native-vector-icons/Feather'
 
 const Navbar = () => {
   const [open, setOpen] = useReducer((s) => !s, true);
   return (
     <SafeAreaView className="fixed z-50 top-0">
       <View className="mt-6 py-6 relative flex flex-row px-4 items-center justify-between bg-[#202020] shadow-md">
-        <View>
-          <Text className="text-white text-xl">🐑</Text>
+        <View className="rounded-full bg-black p-1">
+          <Feather name="user" color="#fff" size={24}/>
         </View>
         <TouchableOpacity
           onPress={setOpen}
