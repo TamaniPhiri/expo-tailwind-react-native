@@ -122,11 +122,9 @@ const Home = ({ navigation }) => {
         </View>
         <View>{icon}</View>
       </View>
-      <View>
+      <View className="flex w-full justify-evenly items-center">
         <View>
-          <View>
             <Fontisto name="wind" />
-          </View>
           <Text>{data.wind.speed} m/s</Text>
         </View>
       </View>
