@@ -153,12 +153,24 @@ const Home = ({ navigation }) => {
         className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-evenly items-center"
       >
         <View className="flex items-center">
-          <Fontisto name="wind" color="white" size={32} />
+          <Fontisto name="wind" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.wind.speed} m/s</Text>
+          <Text>Wind</Text>
         </View>
         <View className="flex items-center">
-          <Ionicons name="water" color="white" size={32} />
+          <Ionicons name="water" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.main.humidity} %</Text>
+          <Text>Humidity</Text>
+        </View>
+        <View className="flex items-center">
+          <Fontisto name="eye" color="white" size={24} />
+          <Text className="text-gray-400 mt-2">{data.visibility/ 1000} km</Text>
+          <Text>Visibility</Text>
+        </View>
+        <View className="flex items-center">
+          <Ionicons name="thermometer-outline" color="white" size={24} />
+          <Text className="text-gray-400 mt-2">{parseInt(data.main.feels_like)}°</Text>
+          <Text>Feels like</Text>
         </View>
       </MotiView>
     </SafeAreaView>
