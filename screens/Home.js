@@ -59,7 +59,7 @@ const Home = ({ navigation }) => {
           setErrorMsg(err.response.data.message);
           setTimeout(() => {
             setErrorMsg("");
-          }, 3000);
+          }, 2000);
         });
       setTimeout(() => {
         setLoading(false);
@@ -118,11 +118,13 @@ const Home = ({ navigation }) => {
       <AnimatePresence>
         {errorMsg ? (
           <MotiView
+            from={{ opacity: 0, translateY: -40 }}
+            animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.1 }}
-            className="fixed z-50 top-0 w-full items-center text-black"
+            className="absolute z-50 top-20 w-full items-center text-black"
           >
             <View className="flex capitalize w-full items-center rounded py-4 justify-center">
-              <Text className="max-w-mg rounded-md text-red-500 font-bold shadow bg-white/70 backdrop-blur-sm p-4">
+              <Text className="max-w-mg rounded-md text-red-500 font-bold shadow bg-[#202020] backdrop-blur-sm p-4">
                 {errorMsg}!
               </Text>
             </View>
