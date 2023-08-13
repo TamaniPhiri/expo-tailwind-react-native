@@ -105,8 +105,8 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
       <MotiView
-        from={{ opacity: 0, translateY:-10 }}
-        animate={{ opacity: 1, translateY:0 }}
+        from={{ opacity: 0, translateY: -10 }}
+        animate={{ opacity: 1, translateY: 0 }}
         transition={{
           type: "timing",
           duration: 1000,
@@ -133,7 +133,7 @@ const Home = ({ navigation }) => {
           type: "timing",
           duration: 400,
         }}
-        className="flex flex-row justify-evenly w-full items-center"
+        className="flex flex-row justify-between w-full items-center"
       >
         <View className="my-6">
           <Text className="text-6xl text-white">
@@ -155,22 +155,26 @@ const Home = ({ navigation }) => {
         <View className="flex items-center">
           <Fontisto name="wind" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.wind.speed} m/s</Text>
-          <Text className="text-xs text-gray-600">Wind</Text>
+          <Text className="text-xs text-gray-600 mt-2">Wind</Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="water" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.main.humidity} %</Text>
-          <Text className="text-xs text-gray-600">Humidity</Text>
+          <Text className="text-xs text-gray-600 mt-2">Humidity</Text>
         </View>
         <View className="flex items-center">
           <Fontisto name="eye" color="white" size={24} />
-          <Text className="text-gray-400 mt-2">{data.visibility/ 1000} km</Text>
-          <Text className="text-xs text-gray-600">Visibility</Text>
+          <Text className="text-gray-400 mt-2">
+            {data.visibility / 1000} km
+          </Text>
+          <Text className="text-xs text-gray-600 mt-2">Visibility</Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="thermometer-outline" color="white" size={24} />
-          <Text className="text-gray-400 mt-2">{parseInt(data.main.feels_like)}°</Text>
-          <Text className="text-xs text-gray-600">Feels like</Text>
+          <Text className="text-gray-400 mt-2">
+            {parseInt(data.main.feels_like)}°
+          </Text>
+          <Text className="text-xs text-gray-600 mt-2">Feels like</Text>
         </View>
       </MotiView>
     </SafeAreaView>
