@@ -104,8 +104,7 @@ const Home = ({ navigation }) => {
   const date = new Date();
   return (
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
-        {/* Header */}
-      
+      {/*Search */}
 
       {/* Temperature and Icon */}
       <MotiView
@@ -133,7 +132,9 @@ const Home = ({ navigation }) => {
           >
             {parseInt(data.main.temp)}°
           </Text>
-          <Text className="text-white text-center capitalize">{data.weather[0].description}</Text>
+          <Text className="text-white text-center capitalize">
+            {data.weather[0].description}
+          </Text>
         </View>
         <View>{icon}</View>
       </MotiView>
@@ -150,29 +151,40 @@ const Home = ({ navigation }) => {
       >
         <View className="flex items-center">
           <Fontisto name="wind" color="white" size={24} />
-          <Text className="text-gray-400 mt-2 text-center">{data.wind.speed} m/s</Text>
+          <Text className="text-gray-400 mt-2 text-center">
+            {data.wind.speed} m/s
+          </Text>
           <Text className="text-xs text-gray-600 mt-2 text-center">Wind</Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="water" color="white" size={24} />
-          <Text className="text-gray-400 mt-2 text-center">{data.main.humidity} %</Text>
-          <Text className="text-xs text-gray-600 mt-2 text-center">Humidity</Text>
+          <Text className="text-gray-400 mt-2 text-center">
+            {data.main.humidity} %
+          </Text>
+          <Text className="text-xs text-gray-600 mt-2 text-center">
+            Humidity
+          </Text>
         </View>
         <View className="flex items-center">
           <Fontisto name="eye" color="white" size={24} />
           <Text className="text-gray-400 mt-2 text-center">
             {data.visibility / 1000} km
           </Text>
-          <Text className="text-xs text-gray-600 mt-2 text-center">Visibility</Text>
+          <Text className="text-xs text-gray-600 mt-2 text-center">
+            Visibility
+          </Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="thermometer-outline" color="white" size={24} />
           <Text className="text-gray-400 mt-2 text-center">
             {parseInt(data.main.feels_like)}°
           </Text>
-          <Text className="text-xs text-gray-600 mt-2 text-center">Feels like</Text>
+          <Text className="text-xs text-gray-600 mt-2 text-center">
+            Feels like
+          </Text>
         </View>
       </MotiView>
+      
       <MotiView
         from={{ opacity: 0, translateY: -10 }}
         animate={{ opacity: 1, translateY: 0 }}
@@ -183,7 +195,9 @@ const Home = ({ navigation }) => {
         className="flex flex-row justify-between items-center"
       >
         <View>
-          <Text className="font-bold text-white text-xl">{data.name}, {data.sys.country}</Text>
+          <Text className="font-bold text-white text-xl">
+            {data.name}, {data.sys.country}
+          </Text>
           <Text className="text-gray-400 font-light text-xs pt-1">
             {date.getUTCDate()}/{date.getUTCMonth() + 1}/{date.getUTCFullYear()}
           </Text>
