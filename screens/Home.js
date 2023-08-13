@@ -11,7 +11,7 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MotiView } from "moti";
+import { MotiView, AnimatePresence } from "moti";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
@@ -115,6 +115,20 @@ const Home = ({ navigation }) => {
   const date = new Date();
   return (
     <SafeAreaView className="bg-[#101010] relative flex-1 justify-around py-4 px-4">
+      <AnimatePresence>
+        {errorMsg ? (
+          <MotiView
+            transition={{ duration: 0.1 }}
+            className="fixed z-50 top-0 w-full items-center text-black"
+          >
+            <View className="flex capitalize w-full items-center rounded py-4 justify-center">
+              <Text className="max-w-mg rounded-md text-red-500 font-bold shadow bg-white/70 backdrop-blur-sm p-4">
+                {errorMsg}!
+              </Text>
+            </View>
+          </MotiView>
+        ) : null}
+      </AnimatePresence>
       {/*Search */}
       <MotiView className="flex bg-[#202020] rounded-full p-1 items-center justify-between flex-row">
         <TextInput
@@ -152,7 +166,9 @@ const Home = ({ navigation }) => {
                 {date.getUTCFullYear()}
               </Text>
             </View>
-            <Text className="font-bold text-gray-400 text-3xl">{data.sys.country}</Text>
+            <Text className="font-bold text-gray-400 text-3xl">
+              {data.sys.country}
+            </Text>
           </MotiView>
           {/* Temperature and Icon */}
           <MotiView
