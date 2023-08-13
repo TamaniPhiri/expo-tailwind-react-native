@@ -135,7 +135,7 @@ const Home = ({ navigation }) => {
         </View>
       ) : (
         <View>
-            {/* More Details */}
+          {/* More Details */}
           <MotiView
             from={{ opacity: 0, translateY: -40 }}
             animate={{ opacity: 1, translateY: 0 }}
@@ -146,17 +146,13 @@ const Home = ({ navigation }) => {
             className="flex flex-row justify-between my-5 items-center"
           >
             <View>
-              <Text className="font-bold text-white text-xl">
-                {data.name}
-              </Text>
+              <Text className="font-bold text-white text-xl">{data.name}</Text>
               <Text className="text-gray-400 font-light text-xs pt-1">
                 {date.getUTCDate()}/{date.getUTCMonth() + 1}/
                 {date.getUTCFullYear()}
               </Text>
             </View>
-            <Text>
-            {data.sys.country}
-            </Text>
+            <Text className="font-bold text-white text-xl">{data.sys.country}</Text>
           </MotiView>
           {/* Temperature and Icon */}
           <MotiView
