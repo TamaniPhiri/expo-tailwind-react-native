@@ -114,18 +114,18 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <SafeAreaView className="bg-[#101010] flex-1 justify-around py-4 px-4">
+    <SafeAreaView className="bg-[#101010] relative flex-1 justify-around py-4 px-4">
       {/*Search */}
-      <MotiView className="flex bg-[#202020] rounded-full p-2 items-center justify-between flex-row">
+      <MotiView className="flex bg-[#202020] rounded-full p-1 items-center justify-between flex-row">
         <TextInput
           onChangeText={(text) => handleInput(text)}
           className="flex flex-1 text-white pl-2"
         />
         <TouchableOpacity
           onPress={handleSubmit}
-          className="px-2 flex items-center justify-center"
+          className="p-2 flex items-center rounded-full bg-zinc-700 justify-center"
         >
-          <Ionicons name="search" color="white" size={28} />
+          <Ionicons name="search" color="white" size={24} />
         </TouchableOpacity>
       </MotiView>
 
