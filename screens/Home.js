@@ -70,7 +70,7 @@ const Home = ({ navigation }) => {
   if (!data) {
     return (
       <View className="flex min-h-screen w-full bg-[#101010] items-center justify-center">
-        <ActivityIndicator color="white" size={50} />
+        <ActivityIndicator color="white" size={70} />
       </View>
     );
   }
@@ -105,8 +105,9 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
       {/*Search */}
-      <MotiView>
-        <TextInput/>
+      <MotiView className="flex bg-[#202020] items-center justify-between flex-row">
+        <TextInput className="flex bg-white w-[95%]"/>
+        <Ionicons name="search" color="white" size={28}/>
       </MotiView>
 
       {/* Temperature and Icon */}
