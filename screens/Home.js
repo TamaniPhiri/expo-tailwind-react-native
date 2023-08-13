@@ -2,10 +2,10 @@ import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
 import Fontisto from "react-native-vector-icons/Fontisto";
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Ionicons from "react-native-vector-icons/Ionicons";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MotiView } from 'moti'
+import { MotiView } from "moti";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
@@ -124,13 +124,21 @@ const Home = ({ navigation }) => {
         </View>
         <View>{icon}</View>
       </View>
-      <MotiView className="flex w-full bg-[#202020] rounded-xl p-4 flex-row justify-evenly items-center">
+      <MotiView
+        from={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: "timing",
+          duration: 350,
+        }}
+        className="flex w-full bg-[#202020] rounded-xl p-4 flex-row justify-evenly items-center"
+      >
         <View className="flex items-center">
-            <Fontisto name="wind" color="white"/>
+          <Fontisto name="wind" color="white" />
           <Text>{data.wind.speed} m/s</Text>
         </View>
         <View className="flex items-center">
-            <Ionicons name="water" color="white"/>
+          <Ionicons name="water" color="white" />
           <Text>{data.wind.speed} m/s</Text>
         </View>
       </MotiView>
