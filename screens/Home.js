@@ -36,14 +36,13 @@ const Home = ({ navigation }) => {
       } else {
         setLocation(inputValue);
       }
-  
+
       setInputValue(""); // Clear inputValue
     } catch (error) {
       setErrorMsg("Something went wrong..");
       console.log(error);
     }
   };
-  
 
   useEffect(() => {
     try {
@@ -78,7 +77,7 @@ const Home = ({ navigation }) => {
         <MotiView
           from={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ loop: true,delay:200}}
+          transition={{ loop: true, delay: 200 }}
         >
           <Text className="text-white my-4 text-center">Loading...</Text>
         </MotiView>
