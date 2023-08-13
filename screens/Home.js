@@ -104,6 +104,7 @@ const Home = ({ navigation }) => {
   const date = new Date();
   return (
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
+        {/* Header */}
       <MotiView
         from={{ opacity: 0, translateY: -10 }}
         animate={{ opacity: 1, translateY: 0 }}
