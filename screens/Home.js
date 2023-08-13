@@ -155,22 +155,22 @@ const Home = ({ navigation }) => {
         <View className="flex items-center">
           <Fontisto name="wind" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.wind.speed} m/s</Text>
-          <Text>Wind</Text>
+          <Text className="text-xs text-gray-600">Wind</Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="water" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.main.humidity} %</Text>
-          <Text>Humidity</Text>
+          <Text className="text-xs text-gray-600">Humidity</Text>
         </View>
         <View className="flex items-center">
           <Fontisto name="eye" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{data.visibility/ 1000} km</Text>
-          <Text>Visibility</Text>
+          <Text className="text-xs text-gray-600">Visibility</Text>
         </View>
         <View className="flex items-center">
           <Ionicons name="thermometer-outline" color="white" size={24} />
           <Text className="text-gray-400 mt-2">{parseInt(data.main.feels_like)}°</Text>
-          <Text>Feels like</Text>
+          <Text className="text-xs text-gray-600">Feels like</Text>
         </View>
       </MotiView>
     </SafeAreaView>
