@@ -104,18 +104,37 @@ const Home = ({ navigation }) => {
   const date = new Date();
   return (
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
-      <View className="flex flex-row justify-between items-center">
+      <MotiView
+        from={{ opacity: 0, translateY:-10 }}
+        animate={{ opacity: 1, translateY:0 }}
+        transition={{
+          type: "timing",
+          duration: 1000,
+        }}
+        className="flex flex-row justify-between items-center"
+      >
         <View>
           <Text className="font-bold text-white text-xl">{data.name}</Text>
           <Text className="text-gray-500 font-light text-xs pt-1">
             {date.getUTCDate()}/{date.getUTCMonth() + 1}/{date.getUTCFullYear()}
           </Text>
         </View>
-        <TouchableOpacity onPress={()=>navigation.navigate("Details")} className="p-2 bg-[#202020] rounded-md flex items-center justify-center">
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Details")}
+          className="p-2 bg-[#202020] rounded-md flex items-center justify-center"
+        >
           <Feather name="grid" color="#fff" size={24} />
         </TouchableOpacity>
-      </View>
-      <View className="flex flex-row justify-evenly w-full items-center">
+      </MotiView>
+      <MotiView
+        from={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          type: "timing",
+          duration: 400,
+        }}
+        className="flex flex-row justify-evenly w-full items-center"
+      >
         <View className="my-6">
           <Text className="text-6xl text-white">
             {parseInt(data.main.temp)}°
@@ -123,7 +142,7 @@ const Home = ({ navigation }) => {
           <Text className="text-white">{data.weather[0].description}</Text>
         </View>
         <View>{icon}</View>
-      </View>
+      </MotiView>
       <MotiView
         from={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -134,11 +153,11 @@ const Home = ({ navigation }) => {
         className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-evenly items-center"
       >
         <View className="flex items-center">
-          <Fontisto name="wind" color="white" size={32}/>
+          <Fontisto name="wind" color="white" size={32} />
           <Text className="text-gray-400 mt-2">{data.wind.speed} m/s</Text>
         </View>
         <View className="flex items-center">
-          <Ionicons name="water" color="white" size={32}/>
+          <Ionicons name="water" color="white" size={32} />
           <Text className="text-gray-400 mt-2">{data.main.humidity} %</Text>
         </View>
       </MotiView>
