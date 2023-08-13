@@ -152,7 +152,7 @@ const Home = ({ navigation }) => {
                 {date.getUTCFullYear()}
               </Text>
             </View>
-            <Text className="font-bold text-gray-300 text-3xl">{data.sys.country}</Text>
+            <Text className="font-bold text-gray-400 text-3xl">{data.sys.country}</Text>
           </MotiView>
           {/* Temperature and Icon */}
           <MotiView
