@@ -22,29 +22,28 @@ const Home = ({ navigation }) => {
   const [animate, setAnimate] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-  const handleInput = (e) => {
-    setInputValue(e.target.value);
+  const handleInput = (text) => {
+    setInputValue(text);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     try {
       if (inputValue === "") {
         setAnimate(true);
         setTimeout(() => {
           setAnimate(false);
         }, 500);
-      }
-      if (inputValue !== "") {
+      } else {
         setLocation(inputValue);
       }
-      const input = document.querySelector("input");
-      input.value = "";
-      e.preventDefault();
+  
+      setInputValue(""); // Clear inputValue
     } catch (error) {
       setErrorMsg("Something went wrong..");
       console.log(error);
     }
   };
+  
 
   useEffect(() => {
     try {
@@ -120,11 +119,11 @@ const Home = ({ navigation }) => {
       {/*Search */}
       <MotiView className="flex bg-[#202020] rounded-full p-2 items-center justify-between flex-row">
         <TextInput
-          onChangeText={(e) => handleInput(e)}
+          onChangeText={(text) => handleInput(text)}
           className="flex flex-1 text-white pl-2"
         />
         <TouchableOpacity
-          onPress={(e) => handleSubmit(e)}
+          onPress={handleSubmit}
           className="px-2 flex items-center justify-center"
         >
           <Ionicons name="search" color="white" size={28} />
