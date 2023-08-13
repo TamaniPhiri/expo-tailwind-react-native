@@ -76,7 +76,7 @@ const Home = ({ navigation }) => {
 
   switch (data.weather[0].main) {
     case "Clouds":
-      icon = "user";
+      icon = "cloud";
       break;
     case "Haze":
       icon = "user";
@@ -85,10 +85,10 @@ const Home = ({ navigation }) => {
       icon = "user";
       break;
     case "Clear":
-      icon = "user";
+      icon = "sun";
       break;
     case "Drizzle":
-      icon = "user";
+      icon = "cloud-drizzle";
       break;
     case "Snow":
       icon = "user";
@@ -112,7 +112,7 @@ const Home = ({ navigation }) => {
           <Feather name="grid" color="#fff" size={24} />
         </TouchableOpacity>
       </View>
-      <View className="flex flex-row justify-between w-full items-center">
+      <View className="flex flex-row justify-evenly w-full items-center">
         <View className="my-6">
           <Text className="text-6xl text-white">
             {parseInt(data.main.temp)}°
@@ -120,7 +120,7 @@ const Home = ({ navigation }) => {
           <Text className="text-white">{data.weather[0].description}</Text>
         </View>
         <View>
-          <Feather name={icon} />
+          <Feather name={icon} color="white" size={74} />
         </View>
       </View>
     </SafeAreaView>
