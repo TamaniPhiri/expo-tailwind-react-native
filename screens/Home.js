@@ -111,7 +111,7 @@ const Home = ({ navigation }) => {
             {date.getUTCDate()}/{date.getUTCMonth() + 1}/{date.getUTCFullYear()}
           </Text>
         </View>
-        <TouchableOpacity className="p-2 bg-[#202020] rounded-md flex items-center justify-center">
+        <TouchableOpacity onPress={()=>navigation.navigate("Details")} className="p-2 bg-[#202020] rounded-md flex items-center justify-center">
           <Feather name="grid" color="#fff" size={24} />
         </TouchableOpacity>
       </View>
@@ -125,20 +125,20 @@ const Home = ({ navigation }) => {
         <View>{icon}</View>
       </View>
       <MotiView
-        from={{ opacity: 0, scale: 0.5 }}
+        from={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           type: "timing",
-          duration: 350,
+          duration: 800,
         }}
         className="flex w-full bg-[#202020] rounded-xl p-4 flex-row justify-evenly items-center"
       >
         <View className="flex items-center">
-          <Fontisto name="wind" color="white" />
+          <Fontisto name="wind" color="white" size={32}/>
           <Text>{data.wind.speed} m/s</Text>
         </View>
         <View className="flex items-center">
-          <Ionicons name="water" color="white" />
+          <Ionicons name="water" color="white" size={32}/>
           <Text>{data.wind.speed} m/s</Text>
         </View>
       </MotiView>
