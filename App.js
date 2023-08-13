@@ -4,6 +4,8 @@ import Home from "./screens/Home";
 import Navbar from "./components/Navbar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import Details from "./screens/Details";
+import 'react-native-reanimated'
+import 'react-native-gesture-handler'
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -13,7 +15,7 @@ export default function App() {
         <Navbar />
         <Stack.Navigator
           initialRouteName="Home"
-          screenOptions={{ headerShown: false, presentation:"fullScreenModal" }}
+          screenOptions={{ headerShown: false, presentation:"card" }}
         >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Details" component={Details} />
