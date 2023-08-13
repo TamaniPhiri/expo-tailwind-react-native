@@ -1,4 +1,10 @@
-import { View, Text, TouchableOpacity, ActivityIndicator, TextInput} from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+  TextInput,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
 import Fontisto from "react-native-vector-icons/Fontisto";
@@ -105,9 +111,11 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView className="bg-[#101010] flex-1 py-4 px-4">
       {/*Search */}
-      <MotiView className="flex bg-[#202020] items-center justify-between flex-row">
-        <TextInput className="flex bg-white w-[95%]"/>
-        <Ionicons name="search" color="white" size={28}/>
+      <MotiView className="flex bg-[#202020] rounded-full items-center justify-between flex-row">
+        <TextInput className="flex flex-1 text-white px-4" />
+        <TouchableOpacity className="p-2 flex items-center justify-center">
+          <Ionicons name="search" color="white" size={28} />
+        </TouchableOpacity>
       </MotiView>
 
       {/* Temperature and Icon */}
