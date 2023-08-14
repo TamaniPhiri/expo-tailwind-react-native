@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
   TextInput,
   Linking,
+  ScrollView
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
@@ -13,7 +14,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MotiView, AnimatePresence, ScrollView } from "moti";
+import { MotiView, AnimatePresence} from "moti";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
@@ -116,8 +117,8 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <ScrollView className="flex-1">
-      <SafeAreaView className="bg-[#101010] relative flex-1 justify-between py-8 px-4">
+    <ScrollView className="flex-1 w-full h-full">
+      <SafeAreaView className="bg-[#101010] relative flex-1 h-screen justify-between py-8 px-4">
         <AnimatePresence>
           {errorMsg ? (
             <MotiView
