@@ -1,5 +1,3 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "react-native-reanimated";
