@@ -196,7 +196,7 @@ const Home = ({ navigation }) => {
               }}
               className="flex flex-row justify-around w-full items-center"
             >
-              <View className="my-6">
+              <View className="my-10">
                 <Text
                   className={`text-6xl text-center ${
                     data.main.temp <= 20
