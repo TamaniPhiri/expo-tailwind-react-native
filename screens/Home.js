@@ -18,7 +18,7 @@ import { MotiView, AnimatePresence } from "moti";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
-const Home = ({ navigation }) => {
+const Home = () => {
   const [data, setData] = useState(null);
   const [location, setLocation] = useState("Lusaka");
   const [inputValue, setInputValue] = useState("");
