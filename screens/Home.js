@@ -4,13 +4,13 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   TextInput,
-  Linking
+  Linking,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Entypo from 'react-native-vector-icons'
+import Entypo from "react-native-vector-icons/Entypo";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MotiView, AnimatePresence } from "moti";
@@ -138,9 +138,9 @@ const Home = ({ navigation }) => {
         from={{ opacity: 0, translateX: -40 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{
-            type: "timing",
-            duration: 1000,
-          }}
+          type: "timing",
+          duration: 1000,
+        }}
         className="flex bg-[#202020] rounded-full p-1 items-center justify-between flex-row"
       >
         <TextInput
@@ -149,7 +149,7 @@ const Home = ({ navigation }) => {
         />
         <TouchableOpacity
           onPress={handleSubmit}
-          className="p-2 flex items-center rounded-full bg-zinc-700 justify-center"
+          className="py-2 px-4 flex items-center rounded-full bg-zinc-700 justify-center"
         >
           <Ionicons name="search" color="white" size={24} />
         </TouchableOpacity>
@@ -264,10 +264,15 @@ const Home = ({ navigation }) => {
           </MotiView>
         </View>
       )}
-      <View>
-        <TouchableOpacity onPress={() => Linking.openURL("https://weather-bay-puce.vercel.app/")}>
-          <Text>Visit the web app</Text>
-          <Feather name="globe"/>
+      <View className="flex w-full items-center rounded py-4 justify-center">
+        <TouchableOpacity
+          onPress={() =>
+            Linking.openURL("https://weather-bay-puce.vercel.app/")
+          }
+          className="flex flex-row gap-2 items-center justify-center py-2 shadow-xl rounded-full w-full bg-[#202020]"
+        >
+          <Text className="text-gray-400">Visit the web app</Text>
+          <Entypo name="globe" size={24} color="#d3d3d3"/>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
