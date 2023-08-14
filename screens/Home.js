@@ -268,7 +268,7 @@ const Home = ({ navigation }) => {
             </MotiView>
           </View>
         )}
-        <View className="flex w-full items-center rounded justify-center">
+        <MotiView from={{opacity:0,translateY:50}} animate={{opacity:1,translateX:0}} className="flex w-full items-center rounded justify-center">
           <TouchableOpacity
             onPress={() =>
               Linking.openURL("https://weather-bay-puce.vercel.app/")
@@ -278,7 +278,7 @@ const Home = ({ navigation }) => {
             <Text className="text-gray-400">Visit the web app</Text>
             <Entypo name="globe" size={20} color="#d3d3d3" />
           </TouchableOpacity>
-        </View>
+        </MotiView>
       </SafeAreaView>
     </ScrollView>
   );
