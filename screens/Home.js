@@ -5,7 +5,6 @@ import {
   ActivityIndicator,
   TextInput,
   Linking,
-  KeyboardAvoidingView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
@@ -15,6 +14,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MotiView, AnimatePresence } from "moti";
+import { ScrollView } from "react-native-gesture-handler";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
@@ -117,7 +117,7 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <KeyboardAvoidingView className="flex-1">
+    <ScrollView className="flex-1">
       <SafeAreaView className="bg-[#101010] relative flex-1 justify-between py-8 px-4">
         <AnimatePresence>
           {errorMsg ? (
@@ -227,7 +227,7 @@ const Home = ({ navigation }) => {
                 type: "timing",
                 duration: 800,
               }}
-              className="flex w-full bg-[#202020] shadow-lg rounded-xl p-4 flex-row justify-around items-center"
+              className="flex w-full bg-[#202020] shadow-lg rounded-xl mb-16 p-4 flex-row justify-around items-center"
             >
               <View className="flex items-center">
                 <Fontisto name="wind" color="white" size={24} />
@@ -280,7 +280,7 @@ const Home = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </SafeAreaView>
-    </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
