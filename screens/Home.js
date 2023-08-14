@@ -118,7 +118,7 @@ const Home = ({ navigation }) => {
   const date = new Date();
   return (
     <ScrollView className="flex-1 w-full h-full">
-      <SafeAreaView className="bg-[#101010] relative flex-1 h-screen justify-between py-8 px-4">
+      <SafeAreaView className="bg-[#101010] relative flex-1 h-full justify-between py-8 px-4">
         <AnimatePresence>
           {errorMsg ? (
             <MotiView
