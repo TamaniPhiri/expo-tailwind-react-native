@@ -6,19 +6,11 @@ import "react-native-reanimated";
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 
-const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
         <StatusBar style="light" />
-        <Stack.Navigator
-          initialRouteName="Home"
-          screenOptions={{ headerShown: false, presentation: "card" }}
-        >
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
+        <Home/>
     </SafeAreaProvider>
   );
 }
