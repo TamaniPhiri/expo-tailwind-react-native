@@ -117,7 +117,7 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
-    <KeyboardAvoidingView>
+    <KeyboardAvoidingView className="flex-1">
     <SafeAreaView className="bg-[#101010] relative flex-1 justify-between py-8 px-4">
       <AnimatePresence>
         {errorMsg ? (
