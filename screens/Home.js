@@ -264,7 +264,7 @@ const Home = ({ navigation }) => {
           </MotiView>
         </View>
       )}
-      <View className="flex w-full items-center rounded py-4 justify-center">
+      <View className="flex w-full items-center rounded justify-center">
         <TouchableOpacity
           onPress={() =>
             Linking.openURL("https://weather-bay-puce.vercel.app/")
@@ -272,7 +272,7 @@ const Home = ({ navigation }) => {
           className="flex flex-row gap-2 items-center justify-center py-2 shadow-xl rounded-full w-full bg-[#202020]"
         >
           <Text className="text-gray-400">Visit the web app</Text>
-          <Entypo name="globe" size={24} color="#d3d3d3"/>
+          <Entypo name="globe" size={20} color="#d3d3d3"/>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
