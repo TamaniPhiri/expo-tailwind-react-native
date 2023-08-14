@@ -5,7 +5,7 @@ import {
   ActivityIndicator,
   TextInput,
   Linking,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
@@ -14,7 +14,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MotiView, AnimatePresence} from "moti";
+import { MotiView, AnimatePresence } from "moti";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
@@ -268,7 +268,15 @@ const Home = ({ navigation }) => {
             </MotiView>
           </View>
         )}
-        <MotiView from={{opacity:0,translateY:50}} animate={{opacity:1,translateX:0}} className="flex w-full items-center rounded justify-center">
+        <MotiView
+          from={{ opacity: 0, translateY: -40 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{
+            type: "timing",
+            duration: 1000,
+          }}
+          className="flex w-full items-center rounded justify-center"
+        >
           <TouchableOpacity
             onPress={() =>
               Linking.openURL("https://weather-bay-puce.vercel.app/")
