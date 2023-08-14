@@ -4,11 +4,13 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   TextInput,
+  Linking
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "react-native-vector-icons/Feather";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import Entypo from 'react-native-vector-icons'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MotiView, AnimatePresence } from "moti";
@@ -262,6 +264,12 @@ const Home = ({ navigation }) => {
           </MotiView>
         </View>
       )}
+      <View>
+        <TouchableOpacity onPress={() => Linking.openURL("https://weather-bay-puce.vercel.app/")}>
+          <Text>Visit the web app</Text>
+          <Feather name="globe"/>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
