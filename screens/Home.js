@@ -14,7 +14,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MotiView, AnimatePresence } from "moti";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView ,GestureHandlerRootView} from "react-native-gesture-handler";
 
 const APIkey = "db5595bf66ed081a4a8bc0aff8227211";
 
@@ -117,6 +117,7 @@ const Home = ({ navigation }) => {
 
   const date = new Date();
   return (
+    <GestureHandlerRootView>
     <ScrollView className="flex-1">
       <SafeAreaView className="bg-[#101010] relative flex-1 justify-between py-8 px-4">
         <AnimatePresence>
@@ -281,6 +282,7 @@ const Home = ({ navigation }) => {
         </View>
       </SafeAreaView>
     </ScrollView>
+    </GestureHandlerRootView>
   );
 };
 
